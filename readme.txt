@@ -69,5 +69,4 @@ will most likely stutter.
 
 User Interface
 Indicators: Tap indicators below S‑Meter to change values.
-Frequency digits: Tap upper/lower halves to change frequency. Requires precise touch calibration.
-Tap left or right of "Step:..." to step frequency up/down.
+
