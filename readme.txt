@@ -1,52 +1,15 @@
-This firmware is designed for SI473x + ESP32 + ILI9341 receivers.
-The firmware will run on diy receivers that follow the "common" wiring scheme that has been published several times.
-It will also run on some versions of the ATS25 receiver. "Air" version of the ATS25 are not supported.
-CW, RTTY, SSTV and WEFAX decoders are included. A web interface is also included.
-A KiwiSDR client lets you select a KiwiSDR and use it as a "radio within the radio".
+This firmware is designed for the CYD and uses a SI4732 as receiver chip. 
 
 ------------------------------------------------------------------------------------------
 
 Getting Started:
 Upload the .bin file to the ESP32.
-Configure display and touchscreen.
-If encoder direction is wrong, adjust in Config menu.
-If SI5351 is used to generate 32768Hz clock, enable in Config menu.
 Configure WiFi:
 Menu → More → Config → WiFi Cred.
 Receiver works offline, but WiFi needed for features.
 
 ------------------------------------------------------------------------------------------
 
-Hardware "special" requirements:
-1. Audio Input on GPIO32:
-Required for waterfall, decoders, audio DSP, WiFi remote:
-Needs 1–2 Vpp signal, centered at 1.65 V.
-Sources: LM386 amplifier or single transistor amplifier (collector at 1.65 V).
-Add 5–10 nF capacitor from GPIO32 to GND to reduce aliasing.
-
-2. Audio Feedback (GPIO26 to audio input)
-Used for all features that feed digital audio into the audio path.
-Connect GPIO26 through a 10 nF capacitor + resistor in series to audio amp input.
-Resistor value sets volume and value depends on the audio amplifier. Resistor value needs to be figured out.
-Good starting points are 100K for high impedance audio input and 10K for low impedance.
-
-3. SD Card
-Connect to SPI bus (shared with display).
-Pin mapping:
-SCK -> GPIO18
-MISO (SDO) -> GPIO19
-MOSI (SDI) -> GPIO23
-CS -> GPIO25
-Keep wiring short (20 MHz bus).
-Not all SD cards are compatible, power cycle  and try another if not recognized.
-
-4. Audio DSP
-Audio DSP reads audio from the ADC and plays it back via the DAC. To avoid mixing "normal" audio and DAC audio, the normal audio must not reach the audio amp input when the DSP is in use. This can be done with the mute transistor and a resistor between the mute transistor and the audio amplifier input, or an audio switch that opens the connection btw the ESP32 audio out and the audio amplifier input.
-
-5. Battery Voltage indicator
-Reads via GPIO33 with 2:1 resistive divider.
-Max battery voltage: 6.6 V.
-------------------------------------------------------------------------------------------
 
 ESP 32 file System (LittleFS)
 Several config files are stored on ESP32’s LittleFS. They can be downloaded/modified/re-uploaded via WiFi Sync:
