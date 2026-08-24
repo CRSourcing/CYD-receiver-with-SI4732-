@@ -9,7 +9,7 @@ Menu → More → Config → WiFi Cred.
 Receiver works offline, but WiFi needed for features.
 
 ------------------------------------------------------------------------------------------
-
+Software hints:
 
 ESP 32 file System (LittleFS)
 Several config files are stored on ESP32’s LittleFS. They can be downloaded/modified/re-uploaded via WiFi Sync:
@@ -26,11 +26,6 @@ splash.jpg -> boot image
 
 ------------------------------------------------------------------------------------------
 
-
-Software hints:
-
-SI5351 support: Generates 32.768 kHz on CLK0 (enable in Config).
-GPO1 support: HIGH in AM, LOW in FM (enable in Config).
 
 Encoder:
 Push = fine tune mode.
