@@ -1,9 +1,12 @@
 
-This receiver and the modifications are ONLY tested with the ESP32-2432S028 CYD:
-
+This receiver and the modifications to the CYD are ONLY tested with the ESP32-2432S028 CYD with ILI9341 display.
+Other displays or display sizes will not work.
 
 
 The SI4732 chip glues nicely to the backside of the CYD. The CYD has not enough GPIO's available and additional GPIO's need to be freed.
+This radio uses the on board audio amplifier. Connect headphones or a speaker to the audio output pins. 
+A volume potentiometer is recommended, see below.
+
 
 Board modifications:
 1. Make GPIO21 available: Connect drain of Q2 (backlight mosfet) to ground. Cut trace to gate of Q2 before R10.
