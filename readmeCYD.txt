@@ -30,7 +30,7 @@ SI 4732 pins:
 11: GPIO22
 10: Either +3.3V or ground
 9:  GPIO17
-8:  via 68pF to antenna connector
+8:  via 220pF to antenna connector
 7:  ground, short connection
 6:  via 6.8pF to antenna connector
 5: NC
